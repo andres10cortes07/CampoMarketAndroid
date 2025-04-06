@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--COLORES PRINCIPALES-->
+        <!--para botones y titulos principales-->
+        <color name="naranja">#FF7E05</color>
+        <!--para botones secundarios y headers-footers-->
+        <color name="verde">#4CAF50</color>
+        <!--para iconos y fondos de fragments-->
+        <color name="blanco">#FFFFFF</color>
+        <!--opcional para algunos fondos o botones-->
+        <color name="azul">#5C9EAD</color>
+
+    <!-- COLORES SECUNDARIOS-->
+        <!--Color negro usado para parrafos y labels de formularios-->
+        <color name="negro">#000000</color>
+        <!--Color gris usado para placeholders y textos con menor relevancia-->
+        <color name="gris">#BABABA</color>
+        <!--Color gris suave usado para bordes de campos-->
+        <color name="gris_claro">#D9D9D9</color>
+</resources>

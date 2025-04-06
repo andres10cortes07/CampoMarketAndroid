@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:background="@color/blanco"
+    android:id="@+id/layoutFragmentLogin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/iconFragmentLogin"
+            android:layout_width="157dp"
+            android:layout_height="157dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:id="@+id/ttlFragmentLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/ttl_iniciar_sesion"
+            android:textAlignment="center"
+            android:textColor="@color/naranja"
+            android:textSize="48sp"/>
+
+
+        <EditText
+            android:id="@+id/userFieldFragmentLogin"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderUsuario" />
+
+        <EditText
+            android:id="@+id/passFieldFragmentLogin"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderContrasena" />
+
+        <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLoginFragmentLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ingresar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/naranja"
+            style="@style/Widget.Material3.Button"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/linkRecovPassFragmentLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/olvidaste_contrasena"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gris"
+            android:textStyle="italic"
+            android:fontFamily="@font/nunito_bold"/>
+
+        <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegisterFragmentLogin"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/crear_cuenta"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/verde"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            style="@style/Widget.Material3.Button"/>
+
+    </LinearLayout>
+
+</LinearLayout>

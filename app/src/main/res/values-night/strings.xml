@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ttl_iniciar_sesion">Iniciar Sesión</string>
+    <string name="placeholderUsuario">Usuario</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="crear_cuenta">Crear nueva cuenta</string>
+    <string name="placeholderContrasena">Contraseña</string>
+</resources>
