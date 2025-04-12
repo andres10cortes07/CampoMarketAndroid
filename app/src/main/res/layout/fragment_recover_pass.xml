@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:background="@color/blanco"
+    android:id="@+id/layoutFragmentRecuperarClave">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/iconFragmentRecovPass"
+            android:layout_width="157dp"
+            android:layout_height="157dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:id="@+id/ttlFragmentRecovPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/recuperarContraseña"
+            android:textAlignment="center"
+            android:textColor="@color/naranja"
+            android:textSize="28sp"/>
+
+
+        <EditText
+            android:id="@+id/idFieldFragmentRecovPass"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderIdRecuperarClave"
+            android:layout_marginTop="0dp"/>
+
+
+
+
+        <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRecuperarClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/recuperar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/naranja"
+            style="@style/Widget.Material3.Button"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/linkVolverALogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volverInicioSesion"
+                android:textColor="@color/verde"
+                android:textStyle="italic"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

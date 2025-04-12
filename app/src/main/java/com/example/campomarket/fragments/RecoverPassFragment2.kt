@@ -10,9 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
 
-class RecoverPassFragment : Fragment() {
+class RecoverPassFragment2 : Fragment() {
 
-    private lateinit var btnRecuperarClave : Button
     private lateinit var textoVolverALogin : TextView
 
     override fun onCreateView(
@@ -20,12 +19,7 @@ class RecoverPassFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_recover_pass, container, false)
-
-        btnRecuperarClave = view.findViewById(R.id.btnRecuperarClave)
-        btnRecuperarClave.setOnClickListener{
-            findNavController().navigate(R.id.recoverPasswordFragment2)
-        }
+        val view = inflater.inflate(R.layout.fragment_recover_pass2, container, false)
 
         textoVolverALogin = view.findViewById(R.id.linkVolverALogin)
         textoVolverALogin.setOnClickListener{
@@ -36,4 +30,3 @@ class RecoverPassFragment : Fragment() {
     }
 
 }
-

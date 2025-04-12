@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/layoutFragmentInicio">
+
+
+    <fragment
+        android:id="@+id/layoutFragmentInicio"
+        android:name="com.example.campomarket.fragments.InicioFragment"
+        android:label="Home Admin" />
+
+    <fragment
+        android:id="@+id/layoutFragmentHomeAdmin"
+        android:name="com.example.campomarket.fragments.HomeAdminFragment"
+        android:label="Home Admin" />
+
+    <fragment
+        android:id="@+id/layoutFragmentCarrito"
+        android:name="com.example.campomarket.fragments.CarritoFragment"
+        android:label="Carrito" />
+
+    <fragment
+        android:id="@+id/categoriasProductosFragment"
+        android:name="com.example.campomarket.fragments.CategoriasProductosFragment"
+        android:label="Categorias de productos" />
+
+    <fragment
+        android:id="@+id/TodosLosProductosFragment"
+        android:name="com.example.campomarket.fragments.AllProductosFragment"
+        android:label="Todos los productos" />
+
+    <fragment
+        android:id="@+id/CategoriaFrutasFragment"
+        android:name="com.example.campomarket.fragments.CatFrutasFragment"
+        android:label="Categoria frutas" />
+
+    <fragment
+        android:id="@+id/CategoriaVerdurasFragment"
+        android:name="com.example.campomarket.fragments.CatVerdurasFragment"
+        android:label="Categoria verduras" />
+
+    <fragment
+        android:id="@+id/CategoriaGranosFragment"
+        android:name="com.example.campomarket.fragments.CatGranosFragment"
+        android:label="Categoria granos" />
+
+    <fragment
+        android:id="@+id/CategoriaQuesosFragment"
+        android:name="com.example.campomarket.fragments.CatQuesosFragment"
+        android:label="Categoria quesos" />
+
+    <fragment
+        android:id="@+id/CategoriaTuberculosFragment"
+        android:name="com.example.campomarket.fragments.CatTuberculosFragment"
+        android:label="Categoria tuberculos" />
+
+
+</navigation>

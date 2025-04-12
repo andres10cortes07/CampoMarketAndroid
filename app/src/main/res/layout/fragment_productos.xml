@@ -1,6 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layoutFragmentHomeAdmin">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Header fijo -->
+    <include
+        android:id="@+id/includeHeader"
+        layout="@layout/header_admin" />
+
+    <!-- Contenido scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@drawable/barra_busqueda"
+                android:paddingHorizontal="12dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:textColor="@color/negro"
+                    android:id="@+id/campoBarraBusqueda"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/placeholderBarraBusqueda"
+                    android:textColorHint="#8B8A8A"
+                    android:padding="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="text"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nunito_bold"/>
+
+                <ImageView
+                    android:id="@+id/btnBarraBusqueda"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/lupa" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:orientation="horizontal"
+                android:background="@drawable/filtro_productos"
+                android:paddingHorizontal="12dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <Spinner
+                    android:id="@+id/filtroProductos"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:padding="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="text"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nunito_bold"/>
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/flecha_abajo"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="EN ESTE FRAGMENT SE VERÁN TODOS LOS PRODUCTOS SIN FILTRO DE CATEGORIA"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer fijo al final -->
+    <include
+        android:id="@+id/includeFooter"
+        layout="@layout/footer_admin" />
+
+</LinearLayout>

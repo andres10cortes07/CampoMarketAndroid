@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="20dp"
     android:background="@color/blanco"
-    android:id="@+id/layoutFragmentLogin"
-    android:gravity="center_horizontal">
+    android:id="@+id/layoutFragmentRecuperarClave2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +15,7 @@
 
 
         <ImageView
-            android:id="@+id/iconFragmentLogin"
+            android:id="@+id/iconFragmentRecovPass"
             android:layout_width="157dp"
             android:layout_height="157dp"
             android:src="@drawable/logo"/>
@@ -27,34 +26,35 @@
             android:layout_height="wrap_content"
             android:layout_margin="20sp"
             android:fontFamily="@font/nunito_bold"
-            android:text="@string/ttl_iniciar_sesion"
+            android:text="@string/recuperarContraseña"
             android:textAlignment="center"
             android:textColor="@color/naranja"
-            android:textSize="42sp"/>
+            android:textSize="31sp"/>
 
+        <TextView
+            android:id="@+id/label_codigo_recov_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/labelRecuperarClave"
+            android:textColor="@color/gris"
+            android:fontFamily="@font/nunito_bold"/>
 
         <EditText
             android:id="@+id/userFieldFragmentLogin"
             style="@style/EditTextConSombra"
             android:layout_width="match_parent"
-            android:textColorHint="@color/gris"
             android:layout_height="wrap_content"
-            android:hint="@string/placeholderUsuario" />
+            android:layout_marginTop="10dp"/>
 
-        <EditText
-            android:id="@+id/passFieldFragmentLogin"
-            style="@style/EditTextConSombra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/gris"
-            android:hint="@string/placeholderContrasena" />
+
+
 
         <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginFragmentLogin"
+            android:id="@+id/btnComprobarCodigo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ingresar"
+            android:text="@string/comprobar"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:fontFamily="@font/nunito_bold"
@@ -64,31 +64,26 @@
             android:layout_marginTop="15dp"
             android:padding="10dp"/>
 
-        <TextView
-            android:id="@+id/linkRecovPassFragmentLogin"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/olvidaste_contrasena"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/gris"
-            android:textStyle="italic"
-            android:fontFamily="@font/nunito_bold"/>
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="20dp">
 
-        <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegisterFragmentLogin"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:text="@string/crear_cuenta"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:fontFamily="@font/nunito_bold"
-            app:cornerRadius="5dp"
-            app:backgroundTint="@color/verde"
-            android:layout_marginTop="40dp"
-            android:padding="10dp"
-            style="@style/Widget.Material3.Button"/>
+            <TextView
+                android:id="@+id/linkVolverALogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volverInicioSesion"
+                android:textColor="@color/verde"
+                android:textStyle="italic"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

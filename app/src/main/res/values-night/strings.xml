@@ -5,4 +5,12 @@
     <string name="ingresar">Ingresar</string>
     <string name="crear_cuenta">Crear nueva cuenta</string>
     <string name="placeholderContrasena">Contraseña</string>
+    <string name="ttl_registro">Crear cuenta</string>
+    <string name="placeholderNombres">Nombres</string>
+    <string name="placeholderIdRecuperarClave">Numero de identificacion registrado</string>
+    <string name="volverInicioSesion">Volver a inicio de sesión</string>
+    <string name="labelRecuperarClave">Ingresa el código recibido</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="parrafoBienvenida">"Como administrador de CampoMarket, cultivas el crecimiento de nuestra tienda gestionando productos, vendedores y clientes. Accede a reportes y estadísticas para cosechar el éxito de nuestra tienda. "</string>
+    <string name="ttl_categorias">Explora Nuestro Catálogo</string>
 </resources>

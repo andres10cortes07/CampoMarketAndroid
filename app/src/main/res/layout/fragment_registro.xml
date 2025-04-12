@@ -1,6 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp"
+    android:background="@color/blanco"
+    android:id="@+id/layoutFragmentRegistro">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/iconFragmentRegistro"
+            android:layout_width="157dp"
+            android:layout_height="157dp"
+            android:src="@drawable/logo"/>
+
+        <TextView
+            android:id="@+id/ttlFragmentRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/ttl_registro"
+            android:textAlignment="center"
+            android:textColor="@color/naranja"
+            android:textSize="42sp"/>
+
+
+        <EditText
+            android:id="@+id/userFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderUsuario"
+            android:textColorHint="@color/gris"
+            android:layout_marginTop="0dp"/>
+
+        <EditText
+            android:id="@+id/nombreFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gris"
+            android:hint="@string/placeholderNombres" />
+
+        <EditText
+            android:id="@+id/apellidosFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gris"
+            android:hint="@string/placeholderApellidos" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Spinner
+                android:id="@+id/spinnerTipoIdentificacion"
+                style="@style/EditTextConSombra"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:prompt="@string/placeholderTipoDoc"
+                android:spinnerMode="dropdown"
+                android:minHeight="50dp"
+                android:paddingStart="10dp"/>
+
+            <EditText
+                android:id="@+id/idFieldFragmentRegistro"
+                style="@style/EditTextConSombra"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/gris"
+                android:hint="@string/placeholderNumId"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/emailFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/gris"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderCorreo" />
+
+        <EditText
+            android:id="@+id/celularFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gris"
+            android:hint="@string/placeholderCelular" />
+
+        <EditText
+            android:id="@+id/departamentoFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/gris"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderDepartamento" />
+
+        <EditText
+            android:id="@+id/ciudadFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gris"
+            android:hint="@string/placeholderCiudad" />
+
+        <EditText
+            android:id="@+id/direccionFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gris"
+            android:hint="@string/placeholderDireccion" />
+
+        <EditText
+            android:id="@+id/rolFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/gris"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderRol" />
+
+        <EditText
+            android:id="@+id/passFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/gris"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderContrasena" />
+
+        <EditText
+            android:id="@+id/validatePassFieldFragmentRegistro"
+            style="@style/EditTextConSombra"
+            android:textColorHint="@color/gris"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/placeholderConfirmarContraseña" />
+
+        <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegistroFragmentoRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/naranja"
+            style="@style/Widget.Material3.Button"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/linkRecovPassFragmentLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yaTienesCuenta"
+                android:textColor="@color/gris"
+                android:textStyle="italic"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+            <TextView
+                android:id="@+id/linkVolverALogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ingresaAqui"
+                android:textColor="@color/verde"
+                android:textStyle="italic"
+                android:textSize="16sp"
+                android:fontFamily="@font/nunito_bold"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

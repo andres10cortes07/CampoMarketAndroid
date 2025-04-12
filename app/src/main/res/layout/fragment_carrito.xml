@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/layoutFragmentHomeAdmin"
+    android:backgroundTint="@color/blanco">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Header fijo -->
+    <include
+        android:id="@+id/includeHeader"
+        layout="@layout/header_layout" />
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ttl_carrito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ttl_carrito"
+                android:fontFamily="@font/nunito_bold"
+                android:textColor="@color/naranja"
+                android:textSize="24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="EN ESTE FRAGMENT SE MOSTRARAN LOS PRODUCTOS A PARTIR DE RECICLER VIEW"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:background="@drawable/borde_contenedor">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/msgResumenCompra"
+                android:fontFamily="@font/nunito_bold"
+                android:textColor="@color/negro"
+                android:textSize="14sp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/precioTotalCarrito"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EJEMPLO PRECIO"
+                android:fontFamily="@font/nunito_bold"
+                android:textColor="@color/naranja"
+                android:textSize="16sp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnComprarCarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/comprar"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:cornerRadius="0dp"
+            app:backgroundTint="@color/naranja"
+            style="@style/Widget.Material3.Button"/>
+
+
+    </LinearLayout>
+
+    <!-- Footer fijo al final -->
+    <include
+        android:id="@+id/includeFooter"
+        layout="@layout/footer_layout" />
+
+</LinearLayout>
