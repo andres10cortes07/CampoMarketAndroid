@@ -54,4 +54,27 @@
     <string name="labelDisponibilidad">Disponibilidad</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
+    <string name="ttlClientes">Compradores</string>
+    <string name="parrafoClientes">Administra la lista de compradores, busca fácilmente con la barra de búsqueda y edita sus datos directamente en la tabla.</string>
+    <string name="ttlVendedores">Vendedores</string>
+    <string name="parrafoVendedores">Administra la lista de vendedores, busca fácilmente con la barra de búsqueda y edita sus datos directamente en la tabla.</string>
+    <string name="ttl_opciones">Opciones</string>
+    <string name="ubicacionTiendas">Ubicación de tiendas</string>
+    <string name="editar_mi_cuenta">Editar mi cuenta</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
+    <string name="copyright1">© 2025 CampoMarket</string>
+    <string name="copyright2">Todos los derechos reservados</string>
+    <string name="copyright3">Versión 1.0</string>
+    <string name="ttl_tiendas">Puntos fisicos</string>
+    <string name="parrafoTiendas">Explora nuestras tres ubicaciones físicas y encuentra la más cercana a ti. ¡Estamos listos para atenderte!</string>
+    <string name="buscar_tiendas">Encontrar la más cercana</string>
+    <string name="bodega1">Bodega Norte</string>
+    <string name="direccion1">Dirección: Calle 170 # 15-50, Bogotá</string>
+    <string name="telefono1">Teléfono: (601) 745-8890</string>
+    <string name="bodega2">Bodega Centro</string>
+    <string name="direccion2">Dirección: Carrera 10 # 22-30, Bogotá</string>
+    <string name="telefono2">Teléfono: (601) 320-4567</string>
+    <string name="bodega3">Bodega Sur</string>
+    <string name="direccion3">Dirección: Avenida Primero de Mayo # 68 -\n20, Bogotá</string>
+    <string name="telefono3">Teléfono: (601) 320-4567</string>
 </resources>

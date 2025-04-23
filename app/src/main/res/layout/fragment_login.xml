@@ -34,12 +34,12 @@
 
 
         <EditText
-            android:id="@+id/userFieldFragmentLogin"
+            android:id="@+id/emailFieldFragmentLogin"
             style="@style/EditTextConSombra"
             android:layout_width="match_parent"
             android:textColorHint="@color/gris"
             android:layout_height="wrap_content"
-            android:hint="@string/placeholderUsuario" />
+            android:hint="@string/placeholderCorreo" />
 
         <EditText
             android:id="@+id/passFieldFragmentLogin"

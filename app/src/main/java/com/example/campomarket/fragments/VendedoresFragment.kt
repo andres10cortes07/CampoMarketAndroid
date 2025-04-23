@@ -9,16 +9,17 @@ import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
 import com.example.campomarket.util.AdminNavigationUtil
 
-class CarritoFragment : Fragment() {
+class VendedoresFragment : Fragment () {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_carrito, container, false)
+        val view = inflater.inflate(R.layout.fragment_vendedores, container, false)
 
         AdminNavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
+
 
         return view
     }

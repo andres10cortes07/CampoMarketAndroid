@@ -55,5 +55,25 @@
         android:name="com.example.campomarket.fragments.CatTuberculosFragment"
         android:label="Categoria tuberculos" />
 
+    <fragment
+        android:id="@+id/clientesFragment"
+        android:name="com.example.campomarket.fragments.ClientesFragment"
+        android:label="Vista de clientes" />
+
+    <fragment
+        android:id="@+id/vendedoresFragment"
+        android:name="com.example.campomarket.fragments.VendedoresFragment"
+        android:label="Vista de vendedores" />
+
+    <fragment
+        android:id="@+id/masOpcionesFragment"
+        android:name="com.example.campomarket.fragments.MasOpcionesFragmentAdmin"
+        android:label="Vista de mas opciones" />
+
+    <fragment
+        android:id="@+id/tiendasFragment"
+        android:name="com.example.campomarket.fragments.TiendasFragment"
+        android:label="Vista de mas opciones" />
+
 
 </navigation>

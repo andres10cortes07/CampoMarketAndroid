@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/layoutFragmentTiendas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header fijo -->
+        <include
+            android:id="@+id/includeHeader"
+            layout="@layout/header_admin" />
+
+        <!-- Contenido scrollable -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/ttl_home_admin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/ttl_tiendas"
+                    android:textAlignment="center"
+                    android:textColor="@color/naranja"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/msg_home_admin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito"
+                    android:justificationMode="inter_word"
+                    android:text="@string/parrafoTiendas"
+                    android:textColor="@color/negro"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegisterFragmentLogin"
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:text="@string/buscar_tiendas"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nunito_bold"
+                    app:cornerRadius="5dp"
+                    app:backgroundTint="@color/azul"
+                    android:layout_marginTop="10dp"
+                    style="@style/Widget.Material3.Button"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bodega1"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:src="@drawable/imagen_tienda"
+                            android:scaleType="fitXY" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/direccion1"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="16sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/telefono1"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="16sp"
+                            android:layout_marginStart="5dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bodega2"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp"/>/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="230dp"
+                            android:src="@drawable/imagen_tienda2"
+                            android:scaleType="fitXY" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/direccion2"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="16sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/telefono2"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="16sp"
+                            android:layout_marginStart="5dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bodega3"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textColor="@color/negro"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/azul"
+                        android:orientation="vertical"
+                        android:paddingBottom="5dp">
+
+                        <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:src="@drawable/imagen_tienda3"
+                        android:scaleType="fitXY" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/direccion3"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="16sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/telefono3"
+                            android:fontFamily="@font/nunito_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="16sp"
+                            android:layout_marginStart="5dp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Footer fijo al final -->
+        <include
+            android:id="@+id/includeFooter"
+            layout="@layout/footer_admin" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,15 +33,6 @@
 
 
         <EditText
-            android:id="@+id/userFieldFragmentRegistro"
-            style="@style/EditTextConSombra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/placeholderUsuario"
-            android:textColorHint="@color/gris"
-            android:layout_marginTop="0dp"/>
-
-        <EditText
             android:id="@+id/nombreFieldFragmentRegistro"
             style="@style/EditTextConSombra"
             android:layout_width="match_parent"

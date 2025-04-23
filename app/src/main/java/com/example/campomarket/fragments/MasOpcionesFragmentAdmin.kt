@@ -1,38 +1,41 @@
 package com.example.campomarket.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
+import com.example.campomarket.activities.AuthActivity
 import com.example.campomarket.util.AdminNavigationUtil
 
-class HomeAdminFragment : Fragment() {
+class MasOpcionesFragmentAdmin : Fragment() {
 
-    private lateinit var iconoCarrito : ImageView
-    private lateinit var iconoEntrar: ImageView
-    private lateinit var iconoIngresos: ImageView
+    private lateinit var opcionSalir : LinearLayout
     private lateinit var opcionTiendas : LinearLayout
-    private lateinit var opcionMisProductos : LinearLayout
-    private lateinit var opcionProductos : LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home_admin, container, false)
+        val view = inflater.inflate(R.layout.fragment_mas_opciones_admin, container, false)
+
         AdminNavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
 
-        // Accede al ImageView del header directamente
-        opcionProductos = view.findViewById(R.id.cardOpcionProductos)
+        opcionSalir = view.findViewById(R.id.opcionCerrarSesion)
+        opcionSalir.setOnClickListener{
+            val intent = Intent(requireActivity(), AuthActivity::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
 
-        opcionProductos.setOnClickListener {
-            findNavController().navigate(R.id.categoriasProductosFragment)
+        opcionTiendas = view.findViewById(R.id.opcionTiendas)
+        opcionTiendas.setOnClickListener{
+            findNavController().navigate(R.id.tiendasFragment)
         }
 
         return view

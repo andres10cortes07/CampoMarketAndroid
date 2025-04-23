@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
+import com.example.campomarket.util.AdminNavigationUtil
 
 class AllProductosFragment : Fragment() {
 
@@ -14,7 +16,11 @@ class AllProductosFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_productos, container, false)
+        val view = inflater.inflate(R.layout.fragment_productos, container, false)
+
+        AdminNavigationUtil.setupHeaderAndFooter(view, findNavController(),requireActivity())
+
+        return view
     }
 
 }
