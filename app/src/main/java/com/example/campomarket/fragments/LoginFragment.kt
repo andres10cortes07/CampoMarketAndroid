@@ -12,11 +12,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
-import com.example.campomarket.activities.MainActivity
+import com.example.campomarket.activities.MainActivityAdmin
+import com.example.campomarket.activities.MainActivityComprador
+import com.example.campomarket.activities.MainActivityVendedor
 
 class LoginFragment : Fragment() {
 
@@ -41,13 +42,17 @@ class LoginFragment : Fragment() {
         btnLogin = view.findViewById(R.id.btnLoginFragmentLogin)
         btnLogin.setOnClickListener {
             if (validateCredentials()) {
-                Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_SHORT).show()
-                val intent = Intent(requireContext(), MainActivity::class.java)
-                intent.putExtra("startAtHomeAdmin", true)
-                startActivity(intent)
-                requireActivity().finish()
+                val rolRegistrado = sharedPreferences.getString("rol", "") ?: ""
+                when (rolRegistrado) {
+                    "administrador" -> redirectionForRol("Admin", MainActivityAdmin::class.java)
+                    "comprador" -> redirectionForRol("Comprador", MainActivityComprador::class.java)
+                    "vendedor" -> redirectionForRol("Vendedor", MainActivityVendedor::class.java)
+                    else -> {
+                        Toast.makeText(requireContext(), "PA FUERA", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
-            Toast.makeText(requireContext(), "Los datos ingresados son erroneos", Toast.LENGTH_SHORT).show()
+            else Toast.makeText(requireContext(), "Los datos ingresados son erroneos", Toast.LENGTH_SHORT).show()
         }
 
         textoRecuperarClave = view.findViewById(R.id.linkRecovPassFragmentLogin)
@@ -71,13 +76,18 @@ class LoginFragment : Fragment() {
         val correoRegistrado = sharedPreferences.getString("correo", "") ?: ""
         val claveRegistrada = sharedPreferences.getString("clave", "") ?: ""
 
-        Log.d("MiEtiqueta", "Correo registrado: $correoRegistrado")
-        Log.d("MiEtiqueta", "Clave registrada: $claveRegistrada")
-
         if (correoRegistrado.length < 5 || correoRegistrado.length > 50) return false
         if (claveRegistrada.length < 3 || claveRegistrada.length > 50) return false
 
         return correoRegistrado == campoEmail && claveRegistrada == campoPassword
+    }
+
+    private fun redirectionForRol (rol : String, activity : Class<*>) {
+        Toast.makeText(requireContext(), "Bienvenido", Toast.LENGTH_SHORT).show()
+        val intent = Intent(requireContext(), activity)
+        intent.putExtra("startAtHome${rol}", true)
+        startActivity(intent)
+        requireActivity().finish()
     }
 
 }

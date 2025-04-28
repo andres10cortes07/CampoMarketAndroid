@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/verde"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="10dp"
+    android:layout_marginBottom="15dp">
+
+    <!-- !!!!!! SE COLOCAN TODAS LAS OPCIONES POSIBLES Y POSTERIORMENTE SE MUESTRAN O NO DEPENDIENDO ROL DE USUARIO !!!!!!!   -->
+    <LinearLayout
+        android:id="@+id/cardOpcionProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/dieta"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/productos"
+            android:textSize="12sp"
+            android:textColor="@color/blanco"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardOpcionMiCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/editar"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mi_cuenta"
+            android:textSize="12sp"
+            android:textColor="@color/blanco"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardOpcionTiendas"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/ubicacion"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tiendas"
+            android:textSize="12sp"
+            android:textColor="@color/blanco"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cardOpcionMas"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/mas_opciones"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mas"
+            android:textSize="12sp"
+            android:textColor="@color/blanco"
+            android:fontFamily="@font/nunito_bold"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

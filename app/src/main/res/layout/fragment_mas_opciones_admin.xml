@@ -5,10 +5,21 @@
     android:orientation="vertical"
     android:id="@+id/layoutFragmentMasOpcionesAdmin">
 
-    <!-- Header fijo -->
+    <!--    TODOS LOS HEADER-->
     <include
-        android:id="@+id/includeHeader"
-        layout="@layout/header_admin" />
+        android:id="@+id/includeHeaderAdmin"
+        layout="@layout/header_admin"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeHeaderComprador"
+        layout="@layout/header_comprador"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeHeaderVendedor"
+        layout="@layout/header_vendedor"
+        android:visibility="gone"/>
 
     <!-- Contenido scrollable -->
     <ScrollView
@@ -77,6 +88,27 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/opcionCambiarClave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@color/gris_claro"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cambiar_clave"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/flecha"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/opcionCerrarSesion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -129,7 +161,18 @@
 
     <!-- Footer fijo al final -->
     <include
-        android:id="@+id/includeFooter"
-        layout="@layout/footer_admin" />
+        android:id="@+id/includeFooterAdmin"
+        layout="@layout/footer_admin"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeFooterComprador"
+        layout="@layout/footer_comprador"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeFooterVendedor"
+        layout="@layout/footer_vendedor"
+        android:visibility="gone"/>
 
 </LinearLayout>

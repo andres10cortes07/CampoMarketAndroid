@@ -11,7 +11,7 @@
         android:label="Home Admin" />
 
     <fragment
-        android:id="@+id/layoutFragmentHomeAdmin"
+        android:id="@+id/homeAdminFragment"
         android:name="com.example.campomarket.fragments.HomeAdminFragment"
         android:label="Home Admin" />
 
@@ -74,6 +74,22 @@
         android:id="@+id/tiendasFragment"
         android:name="com.example.campomarket.fragments.TiendasFragment"
         android:label="Vista de mas opciones" />
+
+    <fragment
+        android:id="@+id/carritoFragment"
+        android:name="com.example.campomarket.fragments.CarritoFragment"
+        android:label="Carrito de compra" />
+
+    <fragment
+        android:id="@+id/editarCuentaFragment"
+        android:name="com.example.campomarket.fragments.PerfilFragment"
+        android:label="Edicion de cuenta" />
+
+    <fragment
+        android:id="@+id/cambiarClaveFragment"
+        android:name="com.example.campomarket.fragments.CambiarClaveFragment"
+        android:label="Modificacion de contraseña" />
+
 
 
 </navigation>

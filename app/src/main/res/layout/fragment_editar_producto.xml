@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/layoutEditarProducto"
+    android:background="@color/blanco">
+
+    <!--    TODOS LOS HEADER-->
+    <include
+        android:id="@+id/includeHeaderAdmin"
+        layout="@layout/header_admin"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeHeaderComprador"
+        layout="@layout/header_comprador"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeHeaderVendedor"
+        layout="@layout/header_vendedor"
+        android:visibility="gone"/>
+
+    <!-- Contenido scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="@drawable/barra_busqueda"
+                android:paddingHorizontal="12dp"
+                android:gravity="center_vertical"
+                >
+
+                <EditText
+                    android:id="@+id/campoBarraBusqueda"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/placeholderBarraBusqueda"
+                    android:textColorHint="#8B8A8A"
+                    android:padding="0dp"
+                    android:layout_marginEnd="8dp"
+                    android:inputType="text"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/nunito_bold"/>
+
+                <ImageView
+                    android:id="@+id/btnBarraBusqueda"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/lupa" />
+
+            </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/ttl_editar_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editar_producto"
+                    android:textColor="@color/verde"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"/>
+
+                <View
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gris" />
+
+                <ImageView
+                    android:id="@+id/imgEditarProducto"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/mango"/>
+
+                <TextView
+                    android:id="@+id/label_nombre_producto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/labelProducto"
+                    android:textColor="@color/negro"
+                    android:fontFamily="@font/nunito_bold"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/nombre_producto_campo"
+                    style="@style/EditTextConSombra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="EJEMPLO NOMBRE PRODUCTO"
+                    android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/label_valor_unitario_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/labelValorUnidaq"
+                android:textColor="@color/negro"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/valor_unitario_campo"
+                style="@style/EditTextConSombra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="EJEMPLO VALOR PRODUCTO"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/label_valor_libra_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/labelValorLibra"
+                android:textColor="@color/negro"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/valor_libra_campo"
+                style="@style/EditTextConSombra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="EJEMPLO VALOR PRODUCTO"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/label_disponibilidad_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/labelDisponibilidad"
+                android:textColor="@color/negro"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:id="@+id/disponibilidad_campo"
+                style="@style/EditTextConSombra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="EJEMPLO VALOR PRODUCTO"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_weight="2"
+                    android:id="@+id/btnCancelarEditProducto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancelar"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/nunito_bold"
+                    app:cornerRadius="5dp"
+                    app:backgroundTint="@color/gris"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_marginTop="15dp"
+                    android:padding="10dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:id="@+id/btnGuardarEditProducto"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guardar"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/nunito_bold"
+                    app:cornerRadius="5dp"
+                    app:backgroundTint="@color/naranja"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_marginTop="15dp"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer fijo al final -->
+    <include
+        android:id="@+id/includeFooterAdmin"
+        layout="@layout/footer_admin"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeFooterComprador"
+        layout="@layout/footer_comprador"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeFooterVendedor"
+        layout="@layout/footer_vendedor"
+        android:visibility="gone"/>
+
+</LinearLayout>

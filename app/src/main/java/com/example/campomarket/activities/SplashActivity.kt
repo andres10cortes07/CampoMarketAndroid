@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         Log.d("Activity Splash", "Oncreate: Inicializando activity")
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivityAdmin::class.java)
             startActivity(intent)
             finish()
         }, 3000)

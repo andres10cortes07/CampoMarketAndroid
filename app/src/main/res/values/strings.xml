@@ -31,7 +31,7 @@
     <string name="clientes">Clientes</string>
     <string name="vendedores">Vendedores</string>
     <string name="mas">Más</string>
-    <string name="msgBienvenida">🌱 ¡Bienvenido Pepito Perez!</string>
+    <string name="msgBienvenida">🌱 ¡Bienvenido</string>
     <string name="parrafoBienvenida">"Como administrador de CampoMarket, cultivas el crecimiento de nuestra tienda gestionando productos, vendedores y clientes. Accede a reportes y estadísticas para cosechar el éxito de nuestra tienda. "</string>
     <string name="tiendas">Tiendas</string>
     <string name="mis_productos">Mis productos</string>
@@ -77,4 +77,8 @@
     <string name="bodega3">Bodega Sur</string>
     <string name="direccion3">Dirección: Avenida Primero de Mayo # 68 -\n20, Bogotá</string>
     <string name="telefono3">Teléfono: (601) 320-4567</string>
+    <string name="mi_cuenta">Mi cuenta</string>
+    <string name="cambiar_clave">Cambiar clave</string>
+    <string name="placeholderContrasenaActual">Contraseña actual</string>
+    <string name="placeholderNuevaContraseña">Nueva Contraseña</string>
 </resources>

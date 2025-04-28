@@ -4,13 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/layoutFragmentHomeAdmin"
+    android:id="@+id/layoutCatFrutas"
     android:backgroundTint="@color/blanco">
 
-    <!-- Header fijo -->
+    <!--    TODOS LOS HEADER-->
     <include
-        android:id="@+id/includeHeader"
-        layout="@layout/header_admin" />
+        android:id="@+id/includeHeaderAdmin"
+        layout="@layout/header_admin"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeHeaderComprador"
+        layout="@layout/header_comprador"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeHeaderVendedor"
+        layout="@layout/header_vendedor"
+        android:visibility="gone"/>
 
     <!-- Contenido scrollable -->
     <ScrollView
@@ -94,7 +105,17 @@
 
     <!-- Footer fijo al final -->
     <include
-        android:id="@+id/includeFooter"
-        layout="@layout/footer_admin" />
+        android:id="@+id/includeFooterAdmin"
+        layout="@layout/footer_admin"
+        android:visibility="gone"/>
 
+    <include
+        android:id="@+id/includeFooterComprador"
+        layout="@layout/footer_comprador"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/includeFooterVendedor"
+        layout="@layout/footer_vendedor"
+        android:visibility="gone"/>
 </LinearLayout>

@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
-import com.example.campomarket.util.AdminNavigationUtil
+import com.example.campomarket.util.NavigationUtil
 
 class CategoriasProductosFragment : Fragment() {
 
@@ -25,7 +25,7 @@ class CategoriasProductosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_categorias_productos, container, false)
-        AdminNavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
+        NavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
 
         opcionTodosLosProductos = view.findViewById(R.id.opcionTodosLosProductos)
         opcionTodosLosProductos.setOnClickListener {

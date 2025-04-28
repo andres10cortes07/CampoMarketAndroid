@@ -10,12 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
 import com.example.campomarket.activities.AuthActivity
-import com.example.campomarket.util.AdminNavigationUtil
+import com.example.campomarket.util.NavigationUtil
 
 class MasOpcionesFragmentAdmin : Fragment() {
 
     private lateinit var opcionSalir : LinearLayout
     private lateinit var opcionTiendas : LinearLayout
+    private lateinit var opcionCambiarClave : LinearLayout
+    private lateinit var opcionCuenta : LinearLayout
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,7 +26,7 @@ class MasOpcionesFragmentAdmin : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_mas_opciones_admin, container, false)
 
-        AdminNavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
+        NavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
 
         opcionSalir = view.findViewById(R.id.opcionCerrarSesion)
         opcionSalir.setOnClickListener{
@@ -36,6 +38,16 @@ class MasOpcionesFragmentAdmin : Fragment() {
         opcionTiendas = view.findViewById(R.id.opcionTiendas)
         opcionTiendas.setOnClickListener{
             findNavController().navigate(R.id.tiendasFragment)
+        }
+
+        opcionCuenta = view.findViewById(R.id.opcionEditarCuenta)
+        opcionCuenta.setOnClickListener{
+            findNavController().navigate(R.id.editarCuentaFragment)
+        }
+
+        opcionCambiarClave = view.findViewById(R.id.opcionCambiarClave)
+        opcionCambiarClave.setOnClickListener{
+            findNavController().navigate(R.id.cambiarClaveFragment)
         }
 
         return view
