@@ -1,62 +1,59 @@
 package com.example.campomarket.fragments
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
-
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
+import com.example.campomarket.data.model.Usuario
+import com.example.campomarket.data.storage.UsuarioManager
 import com.google.android.material.button.MaterialButton
 
 class RegisterFragment : Fragment() {
 
-    private lateinit var textoIniciarSesion : TextView
-    private lateinit var campoNombres : EditText
-    private lateinit var campoApellidos : EditText
-    private lateinit var campoTipoDoc : Spinner
-    private lateinit var campoNumIdentificacion : EditText
-    private lateinit var campoCorreo : EditText
-    private lateinit var campoCelular : EditText
-    private lateinit var campoDepartamento : EditText
-    private lateinit var campoCiudad : EditText
-    private lateinit var campoDireccion : EditText
-    private lateinit var campoRol : EditText
-    private lateinit var campoClave : EditText
-    private lateinit var campoValidarClave : EditText
+    private lateinit var textoIniciarSesion: TextView
+    private lateinit var campoNombres: EditText
+    private lateinit var campoApellidos: EditText
+    private lateinit var campoTipoDoc: Spinner
+    private lateinit var campoNumIdentificacion: EditText
+    private lateinit var campoCorreo: EditText
+    private lateinit var campoCelular: EditText
+    private lateinit var campoDepartamento: EditText
+    private lateinit var campoCiudad: EditText
+    private lateinit var campoDireccion: EditText
+    private lateinit var campoRol: Spinner
+    private lateinit var campoClave: EditText
+    private lateinit var campoValidarClave: EditText
     private lateinit var btnRegistro: MaterialButton
-    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =  inflater.inflate(R.layout.fragment_registro, container, false)
+        val view = inflater.inflate(R.layout.fragment_registro, container, false)
 
-
-        // CONFIGURACION SPINNER
+        // Configurar spinners
         campoTipoDoc = view.findViewById(R.id.spinnerTipoIdentificacion)
         val tiposIdentificacion = listOf("Tipo doc", "CC", "CE", "Pasaporte")
+        val adapterTipoDoc = ArrayAdapter(requireContext(), R.layout.spinner_item, tiposIdentificacion)
+        adapterTipoDoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        campoTipoDoc.adapter = adapterTipoDoc
 
-        val adapter = ArrayAdapter(
-            requireContext(),
-            R.layout.spinner_item,
-            tiposIdentificacion
-        )
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        campoTipoDoc.adapter = adapter
+        campoRol = view.findViewById(R.id.rolFieldFragmentRegistro)
+        val tiposRol = listOf("Rol", "comprador", "vendedor")
+        val adapterRol = ArrayAdapter(requireContext(), R.layout.spinner_item, tiposRol)
+        adapterRol.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        campoRol.adapter = adapterRol
 
-        // INICIALIZACION DE VARIABLES PARA CAMPOS DE FORMULARIO
+        // Inicializar campos del formulario
         campoNombres = view.findViewById(R.id.nombreFieldFragmentRegistro)
         campoApellidos = view.findViewById(R.id.apellidosFieldFragmentRegistro)
         campoNumIdentificacion = view.findViewById(R.id.idFieldFragmentRegistro)
@@ -65,18 +62,13 @@ class RegisterFragment : Fragment() {
         campoDepartamento = view.findViewById(R.id.departamentoFieldFragmentRegistro)
         campoCiudad = view.findViewById(R.id.ciudadFieldFragmentRegistro)
         campoDireccion = view.findViewById(R.id.direccionFieldFragmentRegistro)
-        campoRol = view.findViewById(R.id.rolFieldFragmentRegistro)
         campoClave = view.findViewById(R.id.passFieldFragmentRegistro)
         campoValidarClave = view.findViewById(R.id.validatePassFieldFragmentRegistro)
         btnRegistro = view.findViewById(R.id.btnRegistroFragmentoRegistro)
 
-        sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
-
-        btnRegistro.setOnClickListener{
-            if(validateFields()) {
-                //Guardar data
+        btnRegistro.setOnClickListener {
+            if (validateFields()) {
                 saveData()
-                findNavController().navigate(R.id.loginFragment)
             }
         }
 
@@ -84,8 +76,6 @@ class RegisterFragment : Fragment() {
         textoIniciarSesion.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
-
-
 
         return view
     }
@@ -97,7 +87,8 @@ class RegisterFragment : Fragment() {
         val telefono = campoCelular.text.toString().trim()
         val contraseña = campoClave.text.toString().trim()
         val valContraseña = campoValidarClave.text.toString().trim()
-        val rol = campoRol.text.toString().trim().lowercase()
+        val tipoDoc = campoTipoDoc.selectedItem.toString().trim()
+        val rol = campoRol.selectedItem.toString().trim().lowercase()
 
         if (!validateCharacters(nombres, 1, 100, "El nombre debe tener entre 1 y 100 caracteres")) return false
         if (!validateCharacters(apellidos, 1, 100, "El apellido debe tener entre 1 y 100 caracteres")) return false
@@ -121,14 +112,18 @@ class RegisterFragment : Fragment() {
             return false
         }
 
-        // Validación del rol
-        val rolesValidos = listOf("vendedor", "comprador", "administrador")
+        val rolesValidos = listOf("vendedor", "comprador")
         if (rol !in rolesValidos) {
-            showToast("El rol debe ser vendedor, comprador o administrador")
+            showToast("Selecciona un rol válido")
             return false
         }
 
-        // Comentario temporal: el rol 'administrador' solo estará permitido hasta que se cree el registro en base de datos
+        val tiposDocValidos = listOf("CC", "CE", "Pasaporte")
+        if (tipoDoc !in tiposDocValidos) {
+            showToast("Selecciona un tipo de documento válido")
+            return false
+        }
+
         return true
     }
 
@@ -141,27 +136,32 @@ class RegisterFragment : Fragment() {
     }
 
     private fun saveData() {
-        val editor = sharedPreferences.edit()
+        val usuario = Usuario(
+            nombres = campoNombres.text.toString().trim(),
+            apellidos = campoApellidos.text.toString().trim(),
+            tipoDocumento = campoTipoDoc.selectedItem.toString(),
+            numeroIdentificacion = campoNumIdentificacion.text.toString().trim(),
+            correo = campoCorreo.text.toString().trim(),
+            celular = campoCelular.text.toString().trim(),
+            departamento = campoDepartamento.text.toString().trim(),
+            ciudad = campoCiudad.text.toString().trim(),
+            direccion = campoDireccion.text.toString().trim(),
+            rol = campoRol.selectedItem.toString().trim(),
+            clave = campoClave.text.toString().trim()
+        )
 
-        editor.putString("nombres", campoNombres.text.toString().trim())
-        editor.putString("apellidos", campoApellidos.text.toString().trim())
-        editor.putString("tipoDocumento", campoTipoDoc.selectedItem.toString())
-        editor.putString("numeroIdentificacion", campoNumIdentificacion.text.toString().trim())
-        editor.putString("correo", campoCorreo.text.toString().trim())
-        editor.putString("celular", campoCelular.text.toString().trim())
-        editor.putString("departamento", campoDepartamento.text.toString().trim())
-        editor.putString("ciudad", campoCiudad.text.toString().trim())
-        editor.putString("direccion", campoDireccion.text.toString().trim())
-        editor.putString("rol", campoRol.text.toString().trim())
-        editor.putString("clave", campoClave.text.toString().trim())
-
-        editor.apply()
+        // Usa UsuarioManager para agregar usuario y validar duplicados
+        val agregado = UsuarioManager.agregarUsuario(requireContext(), usuario)
+        if (!agregado) {
+            showToast("Ya existe un usuario con este correo")
+            return
+        }
 
         showToast("Registro exitoso")
+        findNavController().navigate(R.id.loginFragment)
     }
 
     private fun showToast(mensaje: String) {
         Toast.makeText(requireContext(), mensaje, Toast.LENGTH_SHORT).show()
     }
-
 }

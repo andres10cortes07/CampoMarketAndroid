@@ -8,7 +8,7 @@
         <item name="android:textColor">@color/negro</item>
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/nunito_bold</item>
-        <item name="android:height">50dp</item>
+        <item name="android:height">60dp</item>
         <item name="android:layout_marginTop">15dp</item>
     </style>
 
@@ -21,6 +21,14 @@
         <item name="android:fontFamily">@font/nunito_bold</item>
         <item name="android:height">50dp</item>
         <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="card">
+        <item name="android:background">@drawable/card</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/negro</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
     </style>
 
 </resources>

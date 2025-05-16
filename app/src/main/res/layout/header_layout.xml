@@ -31,26 +31,6 @@
         android:layout_marginTop="20dp">
 
         <!--   SE MANEJA EL VISIBILITY GONE PARA MOSTRAR LAS OPCIONES DEPENDIENDO ROL Y VISTA DESDE EL BACK     -->
-        <ImageView
-            android:id="@+id/iconoSalir"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/salir"
-            android:layout_margin="5dp"/>
-
-        <ImageView
-            android:id="@+id/iconoCarrito"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/carrito"
-            android:layout_margin="5dp"/>
-
-        <ImageView
-            android:id="@+id/iconoIngresos"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/dinero"
-            android:layout_margin="5dp"/>
 
         <ImageView
             android:id="@+id/iconoEntrar"

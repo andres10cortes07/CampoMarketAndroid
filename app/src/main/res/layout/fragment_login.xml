@@ -39,7 +39,8 @@
             android:layout_width="match_parent"
             android:textColorHint="@color/gris"
             android:layout_height="wrap_content"
-            android:hint="@string/placeholderCorreo" />
+            android:hint="@string/placeholderCorreo"
+            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/passFieldFragmentLogin"
@@ -47,7 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/gris"
-            android:hint="@string/placeholderContrasena" />
+            android:hint="@string/placeholderContrasena"
+            android:inputType="textPassword"/>
 
         <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
         <com.google.android.material.button.MaterialButton
@@ -63,6 +65,27 @@
             style="@style/Widget.Material3.Button"
             android:layout_marginTop="15dp"
             android:padding="10dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGoogle"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="@string/ingresarGoogle"
+            android:textColor="@color/azul"
+            android:textSize="20sp"
+            android:fontFamily="@font/nunito_bold"
+            app:icon="@drawable/google"
+            app:iconGravity="textEnd"
+            app:iconTint="@null"
+            app:iconSize="24dp"
+            app:cornerRadius="5dp"
+            app:backgroundTint="@color/blanco"
+            app:strokeColor="@color/azul"
+            app:strokeWidth="2dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            />
 
         <TextView
             android:id="@+id/linkRecovPassFragmentLogin"

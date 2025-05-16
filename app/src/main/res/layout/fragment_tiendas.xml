@@ -12,6 +12,11 @@
 
         <!--    TODOS LOS HEADER-->
         <include
+            android:id="@+id/includeHeader"
+            layout="@layout/header_layout"
+            android:visibility="gone"/>
+
+        <include
             android:id="@+id/includeHeaderAdmin"
             layout="@layout/header_admin"
             android:visibility="gone"/>
@@ -223,6 +228,11 @@
         </ScrollView>
 
         <!-- Footer fijo al final -->
+        <include
+            android:id="@+id/includeFooter"
+            layout="@layout/footer_layout"
+            android:visibility="gone"/>
+
         <include
             android:id="@+id/includeFooterAdmin"
             layout="@layout/footer_admin"

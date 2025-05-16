@@ -81,4 +81,13 @@
     <string name="cambiar_clave">Cambiar clave</string>
     <string name="placeholderContrasenaActual">Contraseña actual</string>
     <string name="placeholderNuevaContraseña">Nueva Contraseña</string>
+    <string name="mis_compras">Mis compras</string>
+    <string name="ttl_compras">Histórico de compras</string>
+    <string name="mis_ventas">Mis ventas</string>
+    <string name="ttl_ventas">Histórico de ventas</string>
+    <string name="crear_cliente">Crear nuevo cliente</string>
+    <string name="crear_vendedor">Crear nuevo vendedor</string>
+    <string name="ingresarGoogle">Ingresar con Google</string>
+    <string name="finalizar_registro">Terminar de registrarme</string>
+    <string name="ttl_completar">Completar campos</string>
 </resources>

@@ -8,8 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
 import com.example.campomarket.util.NavigationUtil
+import com.google.android.material.button.MaterialButton
 
 class ClientesFragment : Fragment () {
+
+    private lateinit var btnCrearComprador : MaterialButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,6 +22,18 @@ class ClientesFragment : Fragment () {
         val view = inflater.inflate(R.layout.fragment_clientes, container, false)
 
         NavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
+
+        // Guardar el nombre del fragment actual para manejarlo en el crear usuario
+        val bundle = Bundle()
+        bundle.putString("fragment_origen", "ClientesFragment")
+
+        btnCrearComprador = view.findViewById(R.id.btnCrearComprador)
+        btnCrearComprador.setOnClickListener{
+            findNavController().navigate(R.id.crearUsuario, bundle)
+        }
+
+
+
 
 
         return view

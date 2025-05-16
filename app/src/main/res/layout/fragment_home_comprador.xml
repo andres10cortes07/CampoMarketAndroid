@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/layoutCatFrutas"
-    android:backgroundTint="@color/blanco">
+    android:id="@+id/layoutFragmentProductosComprador">
 
     <!--    TODOS LOS HEADER-->
     <include
@@ -56,8 +54,7 @@
                     android:layout_marginEnd="8dp"
                     android:inputType="text"
                     android:textSize="16sp"
-                    android:fontFamily="@font/nunito_bold"
-                    tools:ignore="DuplicateIds" />
+                    android:fontFamily="@font/nunito_bold"/>
 
                 <ImageView
                     android:id="@+id/btnBarraBusqueda"
@@ -67,12 +64,10 @@
 
             </LinearLayout>
 
-
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="EN ESTE FRAGMENT SE VERÁN TODOS LOS PRODUCTOS DE CATEGORIA FRUTAS"/>
+                android:text="EN ESTE FRAGMENT SE VERÁN TODOS LOS PRODUCTOS SIN FILTRO DE CATEGORIA"/>
 
         </LinearLayout>
     </ScrollView>
@@ -92,4 +87,5 @@
         android:id="@+id/includeFooterVendedor"
         layout="@layout/footer_vendedor"
         android:visibility="gone"/>
+
 </LinearLayout>

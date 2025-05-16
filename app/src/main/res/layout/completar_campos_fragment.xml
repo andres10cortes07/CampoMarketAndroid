@@ -26,29 +26,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="20sp"
             android:fontFamily="@font/nunito_bold"
-            android:text="@string/ttl_registro"
+            android:text="@string/ttl_completar"
             android:textAlignment="center"
             android:textColor="@color/naranja"
-            android:textSize="42sp"/>
+            android:textSize="28sp"/>
 
-
-        <EditText
-            android:id="@+id/nombreFieldFragmentRegistro"
-            style="@style/EditTextConSombra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/gris"
-            android:hint="@string/placeholderNombres"
-            android:inputType="textPersonName"/>
-
-        <EditText
-            android:id="@+id/apellidosFieldFragmentRegistro"
-            style="@style/EditTextConSombra"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColorHint="@color/gris"
-            android:hint="@string/placeholderApellidos"
-            android:inputType="textPersonName"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,15 +60,6 @@
                 android:inputType="number"/>
 
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/emailFieldFragmentRegistro"
-            style="@style/EditTextConSombra"
-            android:layout_width="match_parent"
-            android:textColorHint="@color/gris"
-            android:layout_height="wrap_content"
-            android:hint="@string/placeholderCorreo"
-            android:inputType="textEmailAddress"/>
 
         <EditText
             android:id="@+id/celularFieldFragmentRegistro"
@@ -124,12 +97,15 @@
             android:hint="@string/placeholderDireccion"
             android:inputType="text"/>
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
 
             <Spinner
-                android:id="@+id/rolFieldFragmentRegistro"
+                android:id="@+id/spinnerRol"
                 style="@style/EditTextConSombra"
                 android:layout_width="0dp"
                 android:layout_height="42dp"
@@ -140,7 +116,6 @@
                 android:paddingStart="10dp"/>
 
         </LinearLayout>
-
 
         <EditText
             android:id="@+id/passFieldFragmentRegistro"
@@ -162,10 +137,10 @@
 
         <!--SE USA MATERIAL BUTTON EN VEZ DE BUTTON PARA EVITAR EL COLOR MORADO POR DEFECTO-->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegistroFragmentoRegistro"
+            android:id="@+id/btnFinalizarRegistro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registrar"
+            android:text="@string/finalizar_registro"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:fontFamily="@font/nunito_bold"
@@ -174,35 +149,6 @@
             style="@style/Widget.Material3.Button"
             android:layout_marginTop="15dp"
             android:padding="10dp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/linkRecovPassFragmentLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/yaTienesCuenta"
-                android:textColor="@color/gris"
-                android:textStyle="italic"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_bold"/>
-
-            <TextView
-                android:id="@+id/linkVolverALogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ingresaAqui"
-                android:textColor="@color/verde"
-                android:textStyle="italic"
-                android:textSize="16sp"
-                android:fontFamily="@font/nunito_bold"/>
-
-        </LinearLayout>
 
 
     </LinearLayout>

@@ -1,38 +1,33 @@
 package com.example.campomarket.fragments
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
+import com.example.campomarket.data.model.Usuario
+import com.example.campomarket.data.storage.UsuarioManager
 import com.example.campomarket.util.NavigationUtil
 
 class PerfilFragment : Fragment() {
 
-    private lateinit var campoNombres : EditText
-    private lateinit var campoApellidos : EditText
-    private lateinit var campoTipoDoc : Spinner
-    private lateinit var campoIdentificacion : EditText
-    private lateinit var campoCelular : EditText
-    private lateinit var campoCorreo : EditText
-    private lateinit var campoDepartamento : EditText
-    private lateinit var campoCiudad : EditText
-    private lateinit var campoDireccion : EditText
-    private lateinit var btnGuardar : Button
-    private lateinit var btnCancelar : Button
+    private lateinit var campoNombres: EditText
+    private lateinit var campoApellidos: EditText
+    private lateinit var campoTipoDoc: Spinner
+    private lateinit var campoIdentificacion: EditText
+    private lateinit var campoCelular: EditText
+    private lateinit var campoCorreo: EditText
+    private lateinit var campoDepartamento: EditText
+    private lateinit var campoCiudad: EditText
+    private lateinit var campoDireccion: EditText
+    private lateinit var btnGuardar: Button
+    private lateinit var btnCancelar: Button
 
-
-    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var usuario: Usuario
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,10 +36,8 @@ class PerfilFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_editar_perfil, container, false)
 
-        // Configuracion de opciones header y footer
         NavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
 
-        // CONFIGURACION SPINNER
         campoTipoDoc = view.findViewById(R.id.spinnerTipoDoc)
         val tiposIdentificacion = listOf("Tipo doc", "CC", "CE", "Pasaporte")
 
@@ -56,10 +49,8 @@ class PerfilFragment : Fragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         campoTipoDoc.adapter = adapter
 
-        // inicializacion de variables de campos y botones
         campoNombres = view.findViewById(R.id.campoNombre)
         campoApellidos = view.findViewById(R.id.campoApellido)
-        campoTipoDoc = view.findViewById(R.id.spinnerTipoDoc)
         campoIdentificacion = view.findViewById(R.id.campoIdentificacion)
         campoCelular = view.findViewById(R.id.campoCelular)
         campoCorreo = view.findViewById(R.id.campoCorreo)
@@ -69,69 +60,86 @@ class PerfilFragment : Fragment() {
         btnGuardar = view.findViewById(R.id.btnGuardarEditCuenta)
         btnCancelar = view.findViewById(R.id.btnCancelarEditCuenta)
 
-        // obtencion de datos del sharedPreferences
-        sharedPreferences = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
+        // Obtener usuario logueado desde UsuarioManager
+        val usuarioLogueado = UsuarioManager.obtenerUsuarioLogueado(requireContext())
+        if (usuarioLogueado == null) {
+            Toast.makeText(requireContext(), "No se encontró usuario logueado", Toast.LENGTH_SHORT).show()
+            return view
+        }
 
-        val nombreRegistrado = sharedPreferences.getString("nombres", "") ?: ""
-        val apellidoRegistrado = sharedPreferences.getString("apellidos", "") ?: ""
-        val tipoDocRegistrado = sharedPreferences.getString("tipoDocumento", "") ?: ""
-        val identificacionRegistrada = sharedPreferences.getString("numeroIdentificacion", "") ?: ""
-        val correoRegistrado = sharedPreferences.getString("correo", "") ?: ""
-        val celularRegistrado = sharedPreferences.getString("celular", "") ?: ""
-        val departamentoRegistrado = sharedPreferences.getString("departamento", "") ?: ""
-        val ciudadRegistrado = sharedPreferences.getString("ciudad", "") ?: ""
-        val direccionRegistrado = sharedPreferences.getString("direccion", "") ?: ""
+        usuario = usuarioLogueado
 
-        // carga de datos a edits texts
-        campoNombres.setText(nombreRegistrado)
-        campoApellidos.setText(apellidoRegistrado)
+        // Rellenar campos con datos del usuario
+        campoNombres.setText(usuario.nombres)
+        campoApellidos.setText(usuario.apellidos)
+        campoIdentificacion.setText(usuario.numeroIdentificacion)
+        campoCelular.setText(usuario.celular)
+        campoCorreo.setText(usuario.correo)
+        campoDepartamento.setText(usuario.departamento)
+        campoCiudad.setText(usuario.ciudad)
+        campoDireccion.setText(usuario.direccion)
 
-        // dejar por defecto la opcion registrada en el shared
-        val indexTipoDoc = tiposIdentificacion.indexOf(tipoDocRegistrado)
+        val indexTipoDoc = tiposIdentificacion.indexOf(usuario.tipoDocumento)
         if (indexTipoDoc != -1) {
             campoTipoDoc.setSelection(indexTipoDoc)
         }
 
-        campoIdentificacion.setText(identificacionRegistrada)
-        campoCelular.setText(celularRegistrado)
-        campoCorreo.setText(correoRegistrado)
-        campoDepartamento.setText(departamentoRegistrado)
-        campoCiudad.setText(ciudadRegistrado)
-        campoDireccion.setText(direccionRegistrado)
+        if (usuario.rol != "administrador") {
+            campoIdentificacion.isEnabled = false
+            campoIdentificacion.isFocusable = false
+            campoIdentificacion.isClickable = false
+        }
 
-
-        // actualizacion de datos
         btnGuardar.setOnClickListener {
-            val nuevoNombre = campoNombres.text.toString()
-            val nuevoApellido = campoApellidos.text.toString()
-            val nuevoTipoDoc = campoTipoDoc.selectedItem.toString()
-            val nuevaIdentificacion = campoIdentificacion.text.toString()
-            val nuevoCelular = campoCelular.text.toString()
-            val nuevoCorreo = campoCorreo.text.toString()
-            val nuevoDepartamento = campoDepartamento.text.toString()
-            val nuevaCiudad = campoCiudad.text.toString()
-            val nuevaDireccion = campoDireccion.text.toString()
+            val nuevoUsuario = usuario.copy(
+                nombres = campoNombres.text.toString(),
+                apellidos = campoApellidos.text.toString(),
+                tipoDocumento = campoTipoDoc.selectedItem.toString(),
+                numeroIdentificacion = campoIdentificacion.text.toString(),
+                celular = campoCelular.text.toString(),
+                correo = campoCorreo.text.toString(),
+                departamento = campoDepartamento.text.toString(),
+                ciudad = campoCiudad.text.toString(),
+                direccion = campoDireccion.text.toString()
+            )
 
-            // Sí hay cambios -> Actualizar SharedPreferences
-            val editor = sharedPreferences.edit()
-            editor.putString("nombres", nuevoNombre)
-            editor.putString("apellidos", nuevoApellido)
-            editor.putString("tipoDocumento", nuevoTipoDoc)
-            editor.putString("numeroIdentificacion", nuevaIdentificacion)
-            editor.putString("celular", nuevoCelular)
-            editor.putString("correo", nuevoCorreo)
-            editor.putString("departamento", nuevoDepartamento)
-            editor.putString("ciudad", nuevaCiudad)
-            editor.putString("direccion", nuevaDireccion)
-            editor.apply()
+            val usuarios = UsuarioManager.obtenerUsuarios(requireContext())
 
-            Toast.makeText(requireContext(), "Datos actualizados correctamente", Toast.LENGTH_SHORT).show()
+            // Validar que no exista otro usuario con el mismo correo
+            if (usuarios.any { it.correo == nuevoUsuario.correo && it.correo != usuario.correo }) {
+                Toast.makeText(requireContext(), "Ya existe un usuario con este correo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-            findNavController().navigate(R.id.masOpcionesFragment)
+            // Actualizar lista: reemplazar usuario editado
+            val indice = usuarios.indexOfFirst { it.correo == usuario.correo }
+            if (indice != -1) {
+                usuarios[indice] = nuevoUsuario
+                UsuarioManager.guardarUsuarios(requireContext(), usuarios)
+
+                // Actualizar usuario logueado también
+                val prefsEditor = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE).edit()
+                prefsEditor.putString("usuarioLogueado", com.google.gson.Gson().toJson(nuevoUsuario))
+                prefsEditor.apply()
+
+                Toast.makeText(requireContext(), "Datos actualizados correctamente", Toast.LENGTH_SHORT).show()
+
+                when (usuario.rol) {
+                    "administrador" -> findNavController().navigate(R.id.masOpcionesFragmentAdmin)
+                    "comprador" -> findNavController().navigate(R.id.masOpcionesFragmentComprador)
+                    "vendedor" -> findNavController().navigate(R.id.masOpcionesFragmentVendedor)
+                }
+            } else {
+                Toast.makeText(requireContext(), "Error al actualizar usuario", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btnCancelar.setOnClickListener {
-            findNavController().navigate(R.id.masOpcionesFragment)
+            when (usuario.rol) {
+                "administrador" -> findNavController().navigate(R.id.masOpcionesFragmentAdmin)
+                "comprador" -> findNavController().navigate(R.id.masOpcionesFragmentComprador)
+                "vendedor" -> findNavController().navigate(R.id.masOpcionesFragmentVendedor)
+            }
         }
 
         return view

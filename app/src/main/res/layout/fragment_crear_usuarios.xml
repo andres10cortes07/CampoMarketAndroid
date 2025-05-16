@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/layoutFragmentEditarPerfil"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutFragmentCrearUsuario"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blanco"
@@ -37,12 +38,12 @@
 
 
             <TextView
-                android:id="@+id/ttl_editar_producto"
+                android:id="@+id/ttl_crear_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/nunito_bold"
-                android:text="@string/editar_mi_cuenta"
+                android:text=""
                 android:textColor="@color/verde"
                 android:textSize="20sp" />
 
@@ -66,8 +67,10 @@
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/nunito_bold"
                     android:text="@string/placeholderNombres"
+                    android:inputType="textPersonName"
                     android:textColor="@color/negro"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:ignore="TextViewEdits" />
 
                 <EditText
                     android:id="@+id/campoNombre"
@@ -75,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:inputType="textPersonName" />
+                    android:inputType="text" />
 
                 <TextView
                     android:id="@+id/label_apellidos"
@@ -93,7 +96,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:inputType="textPersonName" />
+                    android:autofillHints=""
+                    android:inputType="textPersonName"
+                    />
 
                 <TextView
                     android:id="@+id/label_tipo_doc"
@@ -229,7 +234,7 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnCancelarEditCuenta"
+                        android:id="@+id/btnCancelarCrearUsuario"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -244,7 +249,7 @@
                         app:cornerRadius="5dp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/btnGuardarEditCuenta"
+                        android:id="@+id/btnGuardarUsuario"
                         style="@style/Widget.Material3.Button"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"

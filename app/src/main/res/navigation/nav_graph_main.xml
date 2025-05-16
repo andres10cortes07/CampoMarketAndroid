@@ -4,16 +4,58 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/layoutFragmentInicio">
 
-
-    <fragment
-        android:id="@+id/layoutFragmentInicio"
-        android:name="com.example.campomarket.fragments.InicioFragment"
-        android:label="Home Admin" />
-
+    <!--    FRAGMENTS UNICOS DE ADMIN    -->
     <fragment
         android:id="@+id/homeAdminFragment"
         android:name="com.example.campomarket.fragments.HomeAdminFragment"
         android:label="Home Admin" />
+
+    <fragment
+        android:id="@+id/clientesFragment"
+        android:name="com.example.campomarket.fragments.ClientesFragment"
+        android:label="Vista de clientes" />
+
+    <fragment
+        android:id="@+id/vendedoresFragment"
+        android:name="com.example.campomarket.fragments.VendedoresFragment"
+        android:label="Vista de vendedores" />
+
+    <fragment
+        android:id="@+id/layoutFragmentInicio"
+        android:name="com.example.campomarket.fragments.InicioFragment"
+        android:label="Sin inicio de sesion" />
+
+    <fragment
+        android:id="@+id/masOpcionesFragmentAdmin"
+        android:name="com.example.campomarket.fragments.MasOpcionesFragmentAdmin"
+        android:label="Vista de mas opciones" />
+
+    <fragment
+        android:id="@+id/crearUsuario"
+        android:name="com.example.campomarket.fragments.CrearUsuarioFragment"
+        android:label="Vista de creacion de usuarios" />
+
+
+    <!--    FRAGMENTS UNICOS DE COMPRADORES    -->
+    <fragment
+        android:id="@+id/masOpcionesFragmentComprador"
+        android:name="com.example.campomarket.fragments.MasOpcionesFragmentComprador"
+        android:label="Vista de mas opciones" />
+
+
+    <!--    FRAGMENTS UNICOS DE VENDEDORES    -->
+    <fragment
+        android:id="@+id/masOpcionesFragmentVendedor"
+        android:name="com.example.campomarket.fragments.MasOpcionesFragmentVendedor"
+        android:label="Vista de mas opciones vendedor" />
+
+
+    <!--  FRAGMENTS COMPARTIDOS ENTRE DIFERENTES ROLES  -->
+
+    <fragment
+        android:id="@+id/homeCompradorFragment"
+        android:name="com.example.campomarket.fragments.HomeCompradorFragment"
+        android:label="Home Comprador" />
 
     <fragment
         android:id="@+id/layoutFragmentCarrito"
@@ -56,21 +98,6 @@
         android:label="Categoria tuberculos" />
 
     <fragment
-        android:id="@+id/clientesFragment"
-        android:name="com.example.campomarket.fragments.ClientesFragment"
-        android:label="Vista de clientes" />
-
-    <fragment
-        android:id="@+id/vendedoresFragment"
-        android:name="com.example.campomarket.fragments.VendedoresFragment"
-        android:label="Vista de vendedores" />
-
-    <fragment
-        android:id="@+id/masOpcionesFragment"
-        android:name="com.example.campomarket.fragments.MasOpcionesFragmentAdmin"
-        android:label="Vista de mas opciones" />
-
-    <fragment
         android:id="@+id/tiendasFragment"
         android:name="com.example.campomarket.fragments.TiendasFragment"
         android:label="Vista de mas opciones" />
@@ -79,6 +106,16 @@
         android:id="@+id/carritoFragment"
         android:name="com.example.campomarket.fragments.CarritoFragment"
         android:label="Carrito de compra" />
+
+    <fragment
+        android:id="@+id/misComprasFragment"
+        android:name="com.example.campomarket.fragments.ComprasFragment"
+        android:label="Historico de compras" />
+
+    <fragment
+        android:id="@+id/misVentasFragment"
+        android:name="com.example.campomarket.fragments.VentasFragment"
+        android:label="Historico de ventas" />
 
     <fragment
         android:id="@+id/editarCuentaFragment"

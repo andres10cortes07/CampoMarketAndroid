@@ -20,8 +20,9 @@
         android:label="Recuperar Contraseña" />
 
     <fragment
-        android:id="@+id/recoverPasswordFragment2"
-        android:name="com.example.campomarket.fragments.RecoverPassFragment2"
-        android:label="Recuperar Contraseña 2" >
-    </fragment>
+        android:id="@+id/completarPerfilFragment"
+        android:name="com.example.campomarket.fragments.CompletarPerfilFragment"
+        android:label="Recuperar Contraseña" />
+
+
 </navigation>

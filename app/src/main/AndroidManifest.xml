@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--    PERMISO PARA ACCESO A INTERNET (NO LE APARECE AL USUARIO)-->
+    <uses-permission android:name="android.permission.INTERNET"
+        tools:ignore="ManifestOrder" />
+
+    <!--    PERMISO PARA MANEJO DE SESION DE GOOGLE-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CampoMarket"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyALm0xtl3FxC4vAOdq-cBikeSifVnFAx1Y"
+            />
+
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
@@ -34,6 +47,11 @@
 
         <activity
             android:name=".activities.MainActivityComprador"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".activities.MainActivityVendedor"
             android:exported="false">
         </activity>
 

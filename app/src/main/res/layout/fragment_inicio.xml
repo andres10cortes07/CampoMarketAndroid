@@ -60,9 +60,5 @@
 
     </ScrollView>
 
-    <!-- Footer fijo al final -->
-    <include
-        android:id="@+id/includeFooter"
-        layout="@layout/footer_layout" />
 
 </LinearLayout>
