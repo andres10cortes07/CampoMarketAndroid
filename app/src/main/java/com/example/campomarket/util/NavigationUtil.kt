@@ -169,9 +169,9 @@ object NavigationUtil {
             navController.navigate(R.id.editarCuentaFragment)
         }
 
-        // opcionMisProductos?.setOnClickListener {
-        //     navController.navigate(R.id.misProductosFragment)
-        // }
+         opcionMisProductos?.setOnClickListener {
+             navController.navigate(R.id.misProductosFragment)
+         }
 
         opcionMas?.setOnClickListener {
             navController.navigate(R.id.masOpcionesFragmentVendedor)

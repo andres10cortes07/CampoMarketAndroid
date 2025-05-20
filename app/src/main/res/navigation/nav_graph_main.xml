@@ -35,6 +35,11 @@
         android:name="com.example.campomarket.fragments.CrearUsuarioFragment"
         android:label="Vista de creacion de usuarios" />
 
+    <fragment
+        android:id="@+id/editarUsuario"
+        android:name="com.example.campomarket.fragments.EditarUsuariosFragment"
+        android:label="Vista de edicion de usuarios" />
+
 
     <!--    FRAGMENTS UNICOS DE COMPRADORES    -->
     <fragment
@@ -48,6 +53,16 @@
         android:id="@+id/masOpcionesFragmentVendedor"
         android:name="com.example.campomarket.fragments.MasOpcionesFragmentVendedor"
         android:label="Vista de mas opciones vendedor" />
+
+    <fragment
+        android:id="@+id/misProductosFragment"
+        android:name="com.example.campomarket.fragments.ProductosFragment"
+        android:label="Vista de mis productos vendedor" />
+
+    <fragment
+        android:id="@+id/crearProductoFragment"
+        android:name="com.example.campomarket.fragments.CrearProductoFragment"
+        android:label="Crear producto en vendedor" />
 
 
     <!--  FRAGMENTS COMPARTIDOS ENTRE DIFERENTES ROLES  -->
@@ -126,6 +141,11 @@
         android:id="@+id/cambiarClaveFragment"
         android:name="com.example.campomarket.fragments.CambiarClaveFragment"
         android:label="Modificacion de contraseña" />
+
+    <fragment
+        android:id="@+id/editarProducto"
+        android:name="com.example.campomarket.fragments.EditarProducto"
+        android:label="Modificacion de producto" />
 
 
 

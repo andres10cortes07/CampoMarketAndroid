@@ -41,6 +41,17 @@ object UsuarioManager {
         return usuarios.find { it.correo == correo }
     }
 
+    fun actualizarUsuario(context: Context, usuarioActualizado: Usuario): Boolean {
+        val usuarios = obtenerUsuarios(context)
+        val index = usuarios.indexOfFirst { it.correo == usuarioActualizado.correo }
+        if (index != -1) {
+            usuarios[index] = usuarioActualizado
+            guardarUsuarios(context, usuarios)
+            return true
+        }
+        return false
+    }
+
     fun obtenerUsuarioLogueado(context: Context): Usuario? {
         val json = getSharedPreferences(context).getString("usuarioLogueado", null)
         return if (json != null) Gson().fromJson(json, Usuario::class.java) else null

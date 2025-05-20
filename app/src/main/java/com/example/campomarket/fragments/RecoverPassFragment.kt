@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
-import com.example.campomarket.data.model.Usuario
+import com.example.campomarket.util.PasswordRecoveryUtil
 import com.example.campomarket.data.storage.UsuarioManager
 import com.example.campomarket.util.MailSender
 
@@ -48,7 +48,6 @@ class RecoverPassFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            // Obtener lista de usuarios usando UsuarioManager
             val listaUsuarios = UsuarioManager.obtenerUsuarios(requireContext())
             if (listaUsuarios.isEmpty()) {
                 Toast.makeText(requireActivity(), "No hay usuarios registrados", Toast.LENGTH_SHORT).show()
@@ -96,11 +95,9 @@ class RecoverPassFragment : Fragment() {
                 )
                 sender.sendMail(usuario.correo, asunto, mensaje)
 
-                // Actualizar contraseña del usuario
                 val usuarioActualizado = usuario.copy(clave = nuevaClave)
                 listaUsuarios[indexUsuario] = usuarioActualizado
 
-                // Guardar usuarios actualizados usando UsuarioManager
                 UsuarioManager.guardarUsuarios(requireContext(), listaUsuarios)
 
                 Toast.makeText(requireContext(), "Hemos enviado una nueva clave a tu correo", Toast.LENGTH_SHORT).show()

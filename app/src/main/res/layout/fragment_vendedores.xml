@@ -105,12 +105,17 @@
                 android:padding="10dp"
                 app:iconTint="@color/blanco"/>
 
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/blanco"
+                android:id="@+id/recyclerVendedores"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="EN ESTA VISTA SE VISUALIZARAN TODOS LOS VENDEDORES"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/negro"/>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="vertical"/>
 
         </LinearLayout>
     </ScrollView>

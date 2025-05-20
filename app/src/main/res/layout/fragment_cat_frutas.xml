@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/layoutCatFrutas"
     android:backgroundTint="@color/blanco">
@@ -67,12 +68,18 @@
 
             </LinearLayout>
 
-
-
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/blanco"
+                android:id="@+id/recyclerProductosPorCategoria"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="EN ESTE FRAGMENT SE VERÁN TODOS LOS PRODUCTOS DE CATEGORIA FRUTAS"/>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="vertical"/>
+
 
         </LinearLayout>
     </ScrollView>

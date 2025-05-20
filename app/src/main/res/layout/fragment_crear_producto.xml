@@ -1,0 +1,236 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutFragmentCrearProducto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical">
+
+    <!--    TODOS LOS HEADER-->
+    <include
+        android:id="@+id/includeHeaderAdmin"
+        layout="@layout/header_admin"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/includeHeaderComprador"
+        layout="@layout/header_comprador"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/includeHeaderVendedor"
+        layout="@layout/header_vendedor"
+        android:visibility="gone" />
+
+    <!-- Contenido scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ttl_crear_producto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/ttl_crear_producto"
+                android:textColor="@color/verde"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gris" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <!-- Imagen -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/imagen"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/imagenProducto"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeleccionarImagen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/seleccionar_imagen"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/azul" />
+
+                <!-- Nombre -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/labelProducto"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/campoNombreProducto"
+                    style="@style/EditTextConSombra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:inputType="text" />
+
+                <!-- Valor unitario -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/labelValorUnidaq"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/campoValorUnitario"
+                    style="@style/EditTextConSombra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:inputType="numberDecimal" />
+
+                <!-- Valor por libra -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/labelValorLibra"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/campoValorPorLibra"
+                    style="@style/EditTextConSombra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:inputType="numberDecimal" />
+
+                <!-- Disponibilidad -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/labelDisponibilidad"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/campoDisponibilidad"
+                    style="@style/EditTextConSombra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:inputType="number" />
+
+                <!-- Categoría -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/placeholder_categoria"
+                    android:textColor="@color/negro"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    style="@style/EditTextConSombra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:minHeight="50dp"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Botones -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelarProducto"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="2"
+                        android:text="@string/cancelar"
+                        android:textColor="@android:color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="16sp"
+                        app:backgroundTint="@color/gris"
+                        app:cornerRadius="5dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGuardarProducto"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_weight="1"
+                        android:text="@string/guardar"
+                        android:textColor="@android:color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="16sp"
+                        app:backgroundTint="@color/naranja"
+                        app:cornerRadius="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer fijo al final -->
+    <include
+        android:id="@+id/includeFooterAdmin"
+        layout="@layout/footer_admin"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/includeFooterComprador"
+        layout="@layout/footer_comprador"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/includeFooterVendedor"
+        layout="@layout/footer_vendedor"
+        android:visibility="gone" />
+
+</LinearLayout>

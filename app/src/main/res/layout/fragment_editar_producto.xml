@@ -88,8 +88,18 @@
                 <ImageView
                     android:id="@+id/imgEditarProducto"
                     android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:src="@drawable/mango"/>
+                    android:layout_height="200dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeleccionarImagen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/cambiar_imagen"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/azul" />
 
                 <TextView
                     android:id="@+id/label_nombre_producto"
@@ -98,15 +108,34 @@
                     android:text="@string/labelProducto"
                     android:textColor="@color/negro"
                     android:fontFamily="@font/nunito_bold"
-                    android:textSize="16sp"/>
+                    android:textSize="16sp"
+                    android:layout_marginTop="20sp"/>
 
                 <EditText
                     android:id="@+id/nombre_producto_campo"
                     style="@style/EditTextConSombra"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="EJEMPLO NOMBRE PRODUCTO"
                     android:layout_marginTop="5dp"/>
+
+            <!-- Categoría -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/placeholder_categoria"
+                android:textColor="@color/negro"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spinnerCategoria"
+                style="@style/EditTextConSombra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:minHeight="50dp"
+                android:spinnerMode="dropdown" />
 
             <TextView
                 android:id="@+id/label_valor_unitario_producto"
@@ -123,7 +152,6 @@
                 style="@style/EditTextConSombra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="EJEMPLO VALOR PRODUCTO"
                 android:layout_marginTop="5dp"/>
 
             <TextView
@@ -141,7 +169,6 @@
                 style="@style/EditTextConSombra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="EJEMPLO VALOR PRODUCTO"
                 android:layout_marginTop="5dp"/>
 
             <TextView
@@ -159,8 +186,27 @@
                 style="@style/EditTextConSombra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="EJEMPLO VALOR PRODUCTO"
                 android:layout_marginTop="5dp"/>
+
+            <!-- EMAIL SOLO APARECE EN CASO DE SER ADMIN -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/labelEmail"
+                android:textColor="@color/negro"
+                android:textSize="16sp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/campoEmailVendedor"
+                style="@style/EditTextConSombra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -173,7 +219,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/cancelar"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:fontFamily="@font/nunito_bold"
                     app:cornerRadius="5dp"
                     app:backgroundTint="@color/gris"
@@ -189,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/guardar"
                     android:textColor="@android:color/white"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:fontFamily="@font/nunito_bold"
                     app:cornerRadius="5dp"
                     app:backgroundTint="@color/naranja"
