@@ -134,7 +134,6 @@ object NavigationUtil {
         val iconoApp = includeHeaderVendedor?.findViewById<View>(R.id.icon)
         val iconoSalir = includeHeaderVendedor?.findViewById<View>(R.id.iconoSalir)
         val iconoCarrito = includeHeaderVendedor?.findViewById<View>(R.id.iconoCarrito)
-        val iconoIngresos = includeHeaderVendedor?.findViewById<View>(R.id.iconoIngresos)
 
         val includeFooterVendedor = view.findViewById<View>(R.id.includeFooterVendedor)
         val opcionProductos = includeFooterVendedor?.findViewById<View>(R.id.cardOpcionProductos)
@@ -155,11 +154,6 @@ object NavigationUtil {
         iconoCarrito?.setOnClickListener {
             navController.navigate(R.id.carritoFragment)
         }
-
-        // ---------- Sin funcionalidad --------
-        // iconoIngresos?.setOnClickListener {
-        //     navController.navigate(R.id.carritoFragment)
-        // }
 
         opcionProductos?.setOnClickListener {
             navController.navigate(R.id.categoriasProductosFragment)

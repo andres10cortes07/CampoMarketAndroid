@@ -28,7 +28,6 @@ class EditarProducto : Fragment() {
     private lateinit var imagenProducto: ImageView
     private lateinit var btnCambiarImagen: Button
     private lateinit var campoNombreProducto: EditText
-    private lateinit var campoValorUnitario: EditText
     private lateinit var campoValorPorLibra: EditText
     private lateinit var campoDisponibilidad: EditText
     private lateinit var spinnerCategoria: Spinner
@@ -50,7 +49,6 @@ class EditarProducto : Fragment() {
         imagenProducto = view.findViewById(R.id.imgEditarProducto)
         btnCambiarImagen = view.findViewById(R.id.btnSeleccionarImagen)
         campoNombreProducto = view.findViewById(R.id.nombre_producto_campo)
-        campoValorUnitario = view.findViewById(R.id.valor_unitario_campo)
         campoValorPorLibra = view.findViewById(R.id.valor_libra_campo)
         campoDisponibilidad = view.findViewById(R.id.disponibilidad_campo)
         spinnerCategoria = view.findViewById(R.id.spinnerCategoria)
@@ -78,7 +76,6 @@ class EditarProducto : Fragment() {
         if (bundle != null) {
             productoId = bundle.getString("id")
             campoNombreProducto.setText(bundle.getString("nombre", ""))
-            campoValorUnitario.setText(bundle.getInt("precioUnitario", 0).toString())
             campoValorPorLibra.setText(bundle.getInt("precioLibra", 0).toString())
             campoDisponibilidad.setText(bundle.getInt("disponibilidad", 0).toString())
 
@@ -121,7 +118,6 @@ class EditarProducto : Fragment() {
     private fun guardarCambios() {
         val nombre = campoNombreProducto.text.toString().trim()
         val categoria = spinnerCategoria.selectedItem.toString()
-        val precio = campoValorUnitario.text.toString().toIntOrNull()
         val valorPorLibra = campoValorPorLibra.text.toString().toIntOrNull()
         val disponibilidad = campoDisponibilidad.text.toString().toIntOrNull()
 
@@ -135,7 +131,7 @@ class EditarProducto : Fragment() {
             ""
         }
 
-        if (productoId == null || nombre.isBlank() || imagenBase64.isBlank() || precio == null || valorPorLibra == null || disponibilidad == null || emailVendedor.isNullOrBlank()) {
+        if (productoId == null || nombre.isBlank() || imagenBase64.isBlank() || valorPorLibra == null || disponibilidad == null || emailVendedor.isNullOrBlank()) {
             Toast.makeText(requireContext(), "Completa todos los campos correctamente.", Toast.LENGTH_SHORT).show()
             return
         }
@@ -144,7 +140,6 @@ class EditarProducto : Fragment() {
             id = productoId!!,
             nombre = nombre,
             categoria = categoria,
-            precioUnitario = precio,
             precioLibra = valorPorLibra,
             disponibilidad = disponibilidad,
             imagenBase64 = imagenBase64,

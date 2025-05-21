@@ -137,22 +137,6 @@
                 android:minHeight="50dp"
                 android:spinnerMode="dropdown" />
 
-            <TextView
-                android:id="@+id/label_valor_unitario_producto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/labelValorUnidaq"
-                android:textColor="@color/negro"
-                android:fontFamily="@font/nunito_bold"
-                android:textSize="16sp"
-                android:layout_marginTop="15dp"/>
-
-            <EditText
-                android:id="@+id/valor_unitario_campo"
-                style="@style/EditTextConSombra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"/>
 
             <TextView
                 android:id="@+id/label_valor_libra_producto"

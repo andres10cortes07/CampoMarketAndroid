@@ -51,7 +51,7 @@
     <string name="labelProducto">Nombre producto</string>
     <string name="labelValorUnidaq">Valor unitario</string>
     <string name="labelValorLibra">Valor por libra</string>
-    <string name="labelDisponibilidad">Disponibilidad</string>
+    <string name="labelDisponibilidad">Disponibilidad (en libras)</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
     <string name="ttlClientes">Compradores</string>

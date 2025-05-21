@@ -30,7 +30,6 @@ class CrearProductoFragment : Fragment() {
     private lateinit var imagenProducto: ImageView
     private lateinit var btnSeleccionarImagen: Button
     private lateinit var campoNombreProducto: EditText
-    private lateinit var campoValorUnitario: EditText
     private lateinit var campoValorPorLibra: EditText
     private lateinit var campoDisponibilidad: EditText
     private lateinit var spinnerCategoria: Spinner
@@ -54,7 +53,6 @@ class CrearProductoFragment : Fragment() {
         imagenProducto = view.findViewById(R.id.imagenProducto)
         btnSeleccionarImagen = view.findViewById(R.id.btnSeleccionarImagen)
         campoNombreProducto = view.findViewById(R.id.campoNombreProducto)
-        campoValorUnitario = view.findViewById(R.id.campoValorUnitario)
         campoValorPorLibra = view.findViewById(R.id.campoValorPorLibra)
         campoDisponibilidad = view.findViewById(R.id.campoDisponibilidad)
         spinnerCategoria = view.findViewById(R.id.spinnerCategoria)
@@ -102,7 +100,6 @@ class CrearProductoFragment : Fragment() {
     private fun guardarProducto() {
         val nombre = campoNombreProducto.text.toString().trim()
         val categoria = spinnerCategoria.selectedItem.toString()
-        val precio = campoValorUnitario.text.toString().toIntOrNull()
         val valorPorLibra = campoValorPorLibra.text.toString().toIntOrNull()
         val disponibilidad = campoDisponibilidad.text.toString().toIntOrNull()
 
@@ -120,7 +117,7 @@ class CrearProductoFragment : Fragment() {
         }
 
         // Validaciones
-        if (nombre.isBlank() || imagenBase64.isBlank() || precio == null || valorPorLibra == null || disponibilidad == null || emailVendedor.isBlank()) {
+        if (nombre.isBlank() || imagenBase64.isBlank() || valorPorLibra == null || disponibilidad == null || emailVendedor.isBlank()) {
             Toast.makeText(
                 requireContext(),
                 "Completa todos los campos correctamente.",
@@ -133,7 +130,6 @@ class CrearProductoFragment : Fragment() {
             id = UUID.randomUUID().toString(),
             nombre = nombre,
             categoria = categoria,
-            precioUnitario = precio,
             precioLibra = valorPorLibra,
             disponibilidad = disponibilidad,
             imagenBase64 = imagenBase64,

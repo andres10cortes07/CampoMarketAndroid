@@ -22,7 +22,6 @@ class ProductosAdapter(
     inner class ProductoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgProducto: ImageView = view.findViewById(R.id.imgProducto)
         val txtNombre: TextView = view.findViewById(R.id.txtNombreProducto)
-        val txtPrecioUnidad: TextView = view.findViewById(R.id.txtValorUni)
         val txtPrecioLibra: TextView = view.findViewById(R.id.txtPrecioLibra)
         val txtDisponibilidad: TextView = view.findViewById(R.id.txtDisponibilidad)
         val txtCategoria: TextView = view.findViewById(R.id.txtCategoria)
@@ -40,9 +39,8 @@ class ProductosAdapter(
         val producto = productos[position]
 
         holder.txtNombre.text = producto.nombre
-        holder.txtPrecioUnidad.text = "$${producto.precioUnitario}"
         holder.txtPrecioLibra.text = "$${producto.precioLibra}"
-        holder.txtDisponibilidad.text = "${producto.disponibilidad} disponibles"
+        holder.txtDisponibilidad.text = "${producto.disponibilidad} libras disponibles"
         holder.txtCategoria.text = producto.categoria
 
         // Convertir imagen base64 a bitmap

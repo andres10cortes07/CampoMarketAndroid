@@ -11,18 +11,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.campomarket.R
 import com.example.campomarket.data.model.Producto
+import com.google.android.material.button.MaterialButton
 
 class ProductosAdapterCompra(
     private val productos: MutableList<Producto>,
-    private val onComprarClick: (Producto) -> Unit
+    private val onAgregarAlCarritoClick: (Producto) -> Unit
 ) : RecyclerView.Adapter<ProductosAdapterCompra.ProductoViewHolder>() {
 
     inner class ProductoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imgProducto: ImageView = view.findViewById(R.id.imgProducto)
         val txtNombre: TextView = view.findViewById(R.id.txtNombreProducto)
-        val txtPrecioUnidad: TextView = view.findViewById(R.id.txtValorUni)
         val txtPrecioLibra: TextView = view.findViewById(R.id.txtPrecioLibra)
-//        val btnComprar: Button = view.findViewById(R.id.btnComprarProducto)
+        val btnAgregarAlCarrito: MaterialButton = view.findViewById(R.id.btnAgregarAlCarrito)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductoViewHolder {
@@ -35,15 +35,15 @@ class ProductosAdapterCompra(
         val producto = productos[position]
 
         holder.txtNombre.text = producto.nombre
-        holder.txtPrecioUnidad.text = "Und a $${producto.precioUnitario}"
         holder.txtPrecioLibra.text = "$${producto.precioLibra}"
 
-        // Convertir imagen base64 a bitmap
         val imageBytes = Base64.decode(producto.imagenBase64, Base64.DEFAULT)
         val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
         holder.imgProducto.setImageBitmap(bitmap)
 
-//        holder.btnComprar.setOnClickListener { onComprarClick(producto) }
+        holder.btnAgregarAlCarrito.setOnClickListener {
+            onAgregarAlCarritoClick(producto)
+        }
     }
 
     override fun getItemCount(): Int = productos.size
