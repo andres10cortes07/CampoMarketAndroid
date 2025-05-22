@@ -80,6 +80,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/bodega1Layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -128,6 +129,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/bodega2Layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -139,7 +141,7 @@
                         android:text="@string/bodega2"
                         android:fontFamily="@font/nunito_bold"
                         android:textColor="@color/negro"
-                        android:textSize="16sp"/>/>
+                        android:textSize="16sp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -173,9 +175,11 @@
                             android:layout_marginStart="5dp"/>
                     </LinearLayout>
 
+
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/bodega3Layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -226,6 +230,13 @@
 
             </LinearLayout>
         </ScrollView>
+
+        <!-- Contenedor del mapa -->
+        <FrameLayout
+            android:id="@+id/contenedorMapa"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"/>
 
         <!-- Footer fijo al final -->
         <include
