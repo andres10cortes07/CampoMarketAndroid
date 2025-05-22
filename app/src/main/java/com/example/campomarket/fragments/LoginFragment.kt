@@ -133,16 +133,19 @@ class LoginFragment : Fragment() {
         val listaUsuarios = UsuarioManager.obtenerUsuarios(requireContext())
         val usuario = listaUsuarios.find { it.correo == correo }
 
+        // Si el usuario no se encuentra o tiene datos incompletos
         if (usuario == null || !usuarioTieneDatosCompletos(usuario)) {
-            val bundle = Bundle().apply {
-                putString("nombres", nombres ?: "")
-                putString("apellidos", apellidos ?: "")
-                putString("correo", correo)
+            // Si el usuario NO tiene un perfil completo en nuestra app, cerramos la sesión de Google para forzar la selección de cuenta
+            mGoogleSignInClient.signOut().addOnCompleteListener(requireActivity()) {
+                val bundle = Bundle().apply {
+                    putString("nombres", nombres ?: "")
+                    putString("apellidos", apellidos ?: "")
+                    putString("correo", correo)
+                }
+                Toast.makeText(requireContext(), "Por último completa estos datos", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.completarPerfilFragment, bundle)
             }
-            Toast.makeText(requireContext(), "Por último completa estos datos", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.completarPerfilFragment, bundle)
         } else {
-            // Guardar el usuario logueado
             val prefs = requireContext().getSharedPreferences(Constantes.SHARED_PREF_NAME, Context.MODE_PRIVATE)
             prefs.edit().putString("usuarioLogueado", Gson().toJson(usuario)).apply()
 

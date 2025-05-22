@@ -34,16 +34,6 @@
             android:layout_marginTop="6dp" />
 
         <TextView
-            android:id="@+id/txtValorUni"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_bold"
-            android:textColor="@color/gris"
-            android:textSize="16sp"
-            android:layout_marginStart="4dp"
-            android:layout_marginBottom="5dp"/>
-
-        <TextView
             android:id="@+id/txtPrecioLibra"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,8 +43,7 @@
             android:layout_marginStart="4dp"/>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnGuardarUsuario"
-            style="@style/Widget.Material3.Button"
+            android:id="@+id/btnAgregarAlCarrito" style="@style/Widget.Material3.Button"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

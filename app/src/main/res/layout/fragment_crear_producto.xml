@@ -105,23 +105,6 @@
                     android:layout_marginTop="5dp"
                     android:inputType="text" />
 
-                <!-- Valor unitario -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/nunito_bold"
-                    android:text="@string/labelValorUnidaq"
-                    android:textColor="@color/negro"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/campoValorUnitario"
-                    style="@style/EditTextConSombra"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:inputType="numberDecimal" />
 
                 <!-- Valor por libra -->
                 <TextView

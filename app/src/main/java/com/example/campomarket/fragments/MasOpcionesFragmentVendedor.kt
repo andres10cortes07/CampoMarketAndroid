@@ -1,5 +1,6 @@
 package com.example.campomarket.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.campomarket.R
 import com.example.campomarket.activities.AuthActivity
+import com.example.campomarket.util.Constantes
 import com.example.campomarket.util.NavigationUtil
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 
 class MasOpcionesFragmentVendedor : Fragment (){
 
@@ -31,10 +35,20 @@ class MasOpcionesFragmentVendedor : Fragment (){
         NavigationUtil.setupHeaderAndFooter(view, findNavController(), requireActivity())
 
         opcionSalir = view.findViewById(R.id.opcionCerrarSesion)
-        opcionSalir.setOnClickListener{
-            val intent = Intent(requireActivity(), AuthActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
+        opcionSalir?.setOnClickListener {
+            // 1. Limpiar información de usuario logueado en SharedPreferences
+            val prefs = requireContext().getSharedPreferences(Constantes.SHARED_PREF_NAME, Context.MODE_PRIVATE)
+            prefs.edit().remove("usuarioLogueado").apply() // Elimina el usuario logueado de SharedPreferences
+
+            // Se cierra sesión de Google si aplica
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+            val googleSignInClient = GoogleSignIn.getClient(requireContext(), gso)
+
+            googleSignInClient.signOut().addOnCompleteListener(requireActivity()) {
+                val intent = Intent(requireContext(), AuthActivity::class.java)
+                requireActivity().startActivity(intent)
+                requireActivity().finish()
+            }
         }
 
         opcionCompras = view.findViewById(R.id.opcionCompras)

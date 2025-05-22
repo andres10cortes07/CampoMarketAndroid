@@ -45,7 +45,6 @@ class ProductosFragment : Fragment() {
                     putString("id", producto.id)
                     putString("nombre", producto.nombre)
                     putString("categoria", producto.categoria)
-                    putInt("precioUnitario", producto.precioUnitario)
                     putInt("precioLibra", producto.precioLibra)
                     putInt("disponibilidad", producto.disponibilidad)
                     putString("imagenBase64", producto.imagenBase64)

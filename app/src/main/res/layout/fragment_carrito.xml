@@ -45,10 +45,17 @@
                 android:textColor="@color/naranja"
                 android:textSize="24dp"/>
 
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/blanco"
+                android:id="@+id/recyclerProductosEnCarrito"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="EN ESTE FRAGMENT SE MOSTRARAN LOS PRODUCTOS A PARTIR DE RECICLER VIEW"/>
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingBottom="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:scrollbars="vertical"/>
 
 
         </LinearLayout>
@@ -65,7 +72,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:padding="5dp">
+            android:padding="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,7 +87,6 @@
                 android:id="@+id/precioTotalCarrito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EJEMPLO PRECIO"
                 android:fontFamily="@font/nunito_bold"
                 android:textColor="@color/naranja"
                 android:textSize="16sp"

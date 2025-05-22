@@ -9,6 +9,8 @@ import androidx.navigation.NavController
 import com.example.campomarket.R
 import com.example.campomarket.activities.AuthActivity
 import com.example.campomarket.data.model.Usuario
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.gson.Gson
 
 object NavigationUtil {
@@ -58,9 +60,19 @@ object NavigationUtil {
         }
 
         iconoSalir?.setOnClickListener {
-            val intent = Intent(activity, AuthActivity::class.java)
-            activity.startActivity(intent)
-            activity.finish()
+            // 1. Limpiar información de usuario logueado en SharedPreferences
+            val prefs = activity.getSharedPreferences(Constantes.SHARED_PREF_NAME, Context.MODE_PRIVATE)
+            prefs.edit().remove("usuarioLogueado").apply() // Elimina el usuario logueado de SharedPreferences
+
+            // Se cierra sesión de Google si aplica
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+            val googleSignInClient = GoogleSignIn.getClient(activity, gso)
+
+            googleSignInClient.signOut().addOnCompleteListener(activity) {
+                val intent = Intent(activity, AuthActivity::class.java)
+                activity.startActivity(intent)
+                activity.finish()
+            }
         }
 
         opcionProductos?.setOnClickListener {
@@ -100,9 +112,19 @@ object NavigationUtil {
         }
 
         iconoSalir?.setOnClickListener {
-            val intent = Intent(activity, AuthActivity::class.java)
-            activity.startActivity(intent)
-            activity.finish()
+            // 1. Limpiar información de usuario logueado en SharedPreferences
+            val prefs = activity.getSharedPreferences(Constantes.SHARED_PREF_NAME, Context.MODE_PRIVATE)
+            prefs.edit().remove("usuarioLogueado").apply() // Elimina el usuario logueado de SharedPreferences
+
+            // Se cierra sesión de Google si aplica
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+            val googleSignInClient = GoogleSignIn.getClient(activity, gso)
+
+            googleSignInClient.signOut().addOnCompleteListener(activity) {
+                val intent = Intent(activity, AuthActivity::class.java)
+                activity.startActivity(intent)
+                activity.finish()
+            }
         }
 
         iconoCarrito?.setOnClickListener {
@@ -134,7 +156,6 @@ object NavigationUtil {
         val iconoApp = includeHeaderVendedor?.findViewById<View>(R.id.icon)
         val iconoSalir = includeHeaderVendedor?.findViewById<View>(R.id.iconoSalir)
         val iconoCarrito = includeHeaderVendedor?.findViewById<View>(R.id.iconoCarrito)
-        val iconoIngresos = includeHeaderVendedor?.findViewById<View>(R.id.iconoIngresos)
 
         val includeFooterVendedor = view.findViewById<View>(R.id.includeFooterVendedor)
         val opcionProductos = includeFooterVendedor?.findViewById<View>(R.id.cardOpcionProductos)
@@ -147,19 +168,24 @@ object NavigationUtil {
         }
 
         iconoSalir?.setOnClickListener {
-            val intent = Intent(activity, AuthActivity::class.java)
-            activity.startActivity(intent)
-            activity.finish()
+            // 1. Limpiar información de usuario logueado en SharedPreferences
+            val prefs = activity.getSharedPreferences(Constantes.SHARED_PREF_NAME, Context.MODE_PRIVATE)
+            prefs.edit().remove("usuarioLogueado").apply() // Elimina el usuario logueado de SharedPreferences
+
+            // Se cierra sesión de Google si aplica
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()
+            val googleSignInClient = GoogleSignIn.getClient(activity, gso)
+
+            googleSignInClient.signOut().addOnCompleteListener(activity) {
+                val intent = Intent(activity, AuthActivity::class.java)
+                activity.startActivity(intent)
+                activity.finish()
+            }
         }
 
         iconoCarrito?.setOnClickListener {
             navController.navigate(R.id.carritoFragment)
         }
-
-        // ---------- Sin funcionalidad --------
-        // iconoIngresos?.setOnClickListener {
-        //     navController.navigate(R.id.carritoFragment)
-        // }
 
         opcionProductos?.setOnClickListener {
             navController.navigate(R.id.categoriasProductosFragment)
